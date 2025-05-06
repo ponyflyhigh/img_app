@@ -1,0 +1,10 @@
+view, swiper, swiper-item {
+    box-sizing: border-box;
+}
+
+.pageBg {
+    background: 
+      linear-gradient(to bottom, transparent, #f9f9f9 1000rpx),
+      linear-gradient(to right, #beecd8 20%, #efded5 500rpx);
+    min-height: 40vh;
+  }

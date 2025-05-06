@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的资料</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+
+    /* 头像样式 */
+   .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #e0e0e0;
+      margin: 0 auto 20px;
+    }
+
+    /* 功能列表样式 */
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    li:last-child {
+      border-bottom: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: #333;
+      display: flex;
+      align-items: center;
+    }
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+
+    .arrow {
+      margin-left: auto;
+      width: 0;
+      height: 0;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-left: 5px solid #333;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="avatar"></div>
+  <ul>
+    <li><a href="#"><span class="icon"></span>完善资料<span class="arrow"></span></a></li>
+    <li><a href="#"><span class="icon"></span>支付设置<span class="arrow"></span></a></li>
+  </ul>
+</body>
+
+</html>

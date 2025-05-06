@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>支付中心</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+    
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    h1 {
+      color: #333;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    /* 支付方式选择 */
+    .payment-methods {
+      display: flex;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    
+    .payment-method {
+      flex: 1;
+      text-align: center;
+      padding: 10px;
+      cursor: pointer;
+      background-color: white;
+      transition: background-color 0.3s;
+    }
+    
+    .payment-method.active {
+      background-color: #07c160;
+      color: white;
+    }
+    
+    .payment-method img {
+      width: 30px;
+      height: 30px;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+    
+    /* 充值金额选择 */
+    .amount-choice {
+      margin: 20px 0;
+    }
+    
+    .amounts {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    
+    .amount-item {
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    .amount-item:hover {
+      border-color: #07c160;
+    }
+    
+    .amount-item.active {
+      background-color: #07c160;
+      color: white;
+      border-color: #07c160;
+    }
+    
+    /* 自定义金额输入 */
+    .custom-amount {
+      margin-top: 15px;
+    }
+    
+    .custom-amount input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    
+    /* 二维码区域 */
+    .qrcode-area {
+      margin: 20px 0;
+      text-align: center;
+      display: none;
+    }
+    
+    .qrcode-area.active {
+      display: block;
+    }
+    
+    .qrcode-container {
+      background-color: white;
+      padding: 15px;
+      border-radius: 10px;
+      display: inline-block;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    
+    .qrcode-image {
+      width: 200px;
+      height: 200px;
+      background-color: #eee;
+      margin-bottom: 10px;
+    }
+    
+    /* 支付按钮 */
+    .pay-button {
+      background-color: #07c160;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+    
+    /* 支付状态提示 */
+    .payment-status {
+      margin-top: 15px;
+      text-align: center;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>选择支付方式</h1>
+    
+    <!-- 支付方式选择 -->
+    <div class="payment-methods">
+      <div class="payment-method active" id="wechat-pay">
+        <img src="https://picsum.photos/30/30?random=1" alt="微信支付">
+        微信支付
+      </div>
+      <div class="payment-method" id="alipay">
+        <img src="https://picsum.photos/30/30?random=2" alt="支付宝">
+        支付宝
+      </div>
+    </div>
+    
+    <!-- 充值金额选择 -->
+    <div class="amount-choice">
+      <p>选择充值金额：</p>
+      <div class="amounts">
+        <div class="amount-item active">10元</div>
+        <div class="amount-item">20元</div>
+        <div class="amount-item">50元</div>
+        <div class="amount-item">100元</div>
+      </div>
+      <div class="custom-amount">
+        <input type="text" placeholder="自定义金额">
+      </div>
+    </div>
+    
+    <!-- 微信支付二维码区域 -->
+    <div class="qrcode-area active" id="wechat-qrcode">
+      <div class="qrcode-container">
+        <div class="qrcode-image">
+          <!-- 这里会显示微信支付二维码 -->
+          <img src="https://picsum.photos/200/200?random=3" alt="微信支付二维码" style="width:100%;">
+        </div>
+        <p>请使用微信扫描二维码支付</p>
+      </div>
+    </div>
+    
+    <!-- 支付宝二维码区域 -->
+    <div class="qrcode-area" id="alipay-qrcode">
+      <div class="qrcode-container">
+        <div class="qrcode-image">
+          <!-- 这里会显示支付宝二维码 -->
+          <img src="https://picsum.photos/200/200?random=4" alt="支付宝二维码" style="width:100%;">
+        </div>
+        <p>请使用支付宝扫描二维码支付</p>
+      </div>
+    </div>
+    
+    <!-- 支付按钮 -->
+    <button class="pay-button">确认支付</button>
+    
+    <!-- 支付状态提示 -->
+    <div class="payment-status">
+      <p>支付完成前请不要关闭此页面</p>
+    </div>
+  </div>
+
+  <script>
+    // 支付方式切换
+    const wechatPay = document.getElementById('wechat-pay');
+    const alipay = document.getElementById('alipay');
+    const wechatQrcode = document.getElementById('wechat-qrcode');
+    const alipayQrcode = document.getElementById('alipay-qrcode');
+    
+    wechatPay.addEventListener('click', () => {
+      wechatPay.classList.add('active');
+      alipay.classList.remove('active');
+      wechatQrcode.classList.add('active');
+      alipayQrcode.classList.remove('active');
+    });
+    
+    alipay.addEventListener('click', () => {
+      alipay.classList.add('active');
+      wechatPay.classList.remove('active');
+      alipayQrcode.classList.add('active');
+      wechatQrcode.classList.remove('active');
+    });
+    
+    // 金额选择
+    const amountItems = document.querySelectorAll('.amount-item');
+    amountItems.forEach(item => {
+      item.addEventListener('click', () => {
+        amountItems.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+      });
+    });
+    
+    // 支付按钮点击事件
+    const payButton = document.querySelector('.pay-button');
+    payButton.addEventListener('click', () => {
+      alert('即将跳转到支付页面...');
+    });
+  </script>
+</body>
+</html>

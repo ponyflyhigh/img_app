@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>壁纸页面</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    /* 导航栏样式 */
+    nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: inherit;
+    }
+
+    nav img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-bottom: 5px;
+    }
+
+    nav span {
+      font-size: 14px;
+    }
+
+    /* 头条优先样式 */
+   .headline {
+      background-color: #f8f8f8;
+      padding: 10px 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+   .headline .tag {
+      background-color: #ccc;
+      color: white;
+      padding: 3px 8px;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+
+    /* 热门专辑样式 */
+   .album {
+      margin-bottom: 20px;
+    }
+
+   .album h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+   .album.album-list {
+      display: flex;
+      justify-content: space-between;
+    }
+
+   .album.album-item {
+      width: 48%;
+    }
+
+   .album.album-item img {
+      width: 100%;
+      height: auto;
+    }
+
+   .album.more {
+      text-align: right;
+    }
+
+   .album.more a {
+      text-decoration: none;
+      color: #666;
+    }
+
+    /* 分类标签样式 */
+   .categories {
+      display: flex;
+      margin-bottom: 10px;
+    }
+
+   .categories a {
+      text-decoration: none;
+      color: inherit;
+      margin-right: 20px;
+      padding-bottom: 5px;
+      border-bottom: 2px solid transparent;
+    }
+
+   .categories a.active {
+      border-bottom-color: #1989fa;
+    }
+
+    /* 图片列表样式 */
+   .image-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+   .image-item {
+      width: 32%;
+      margin-bottom: 20px;
+    }
+
+   .image-item img {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 导航栏 -->
+  <nav>
+    <a href="#">
+      <img src="chat_bg_icon.png" alt="聊天背景图标">
+      <span>聊天背景</span>
+    </a>
+    <a href="#">
+      <img src="avatar_icon.png" alt="头像图标">
+      <span>头像</span>
+    </a>
+    <a href="#">
+      <img src="emoji_icon.png" alt="表情图标">
+      <span>表情</span>
+    </a>
+    <a href="#">
+      <img src="avatar_ornament_icon.png" alt="头像挂件图标">
+      <span>头像挂件</span>
+    </a>
+  </nav>
+  <!-- 头条优先 -->
+  <div class="headline">
+    <span class="tag">头条优先</span>
+    <span class="tag">最新</span>
+    <span>这组壁纸，太绝了！！</span>
+  </div>
+  <!-- 热门专辑 -->
+  <div class="album">
+    <h2>热门专辑</h2>
+    <div class="album-list">
+      <div class="album-item">
+        <img src="album1.jpg" alt="热门专辑1">
+      </div>
+      <div class="album-item">
+        <img src="album2.jpg" alt="热门专辑2">
+      </div>
+    </div>
+    <div class="more">
+      <a href="#">更多 ></a>
+    </div>
+  </div>
+  <!-- 分类标签 -->
+  <div class="categories">
+    <a href="#" class="active">精选</a>
+    <a href="#">最新</a>
+    <a href="#">主题套图</a>
+    <a href="#">天生一对</a>
+    <a href="#">最佳锁屏</a>
+  </div>
+  <!-- 图片列表 -->
+  <div class="image-list">
+    <div class="image-item">
+      <img src="image1.jpg" alt="图片1">
+    </div>
+    <div class="image-item">
+      <img src="image2.jpg" alt="图片2">
+    </div>
+    <div class="image-item">
+      <img src="image3.jpg" alt="图片3">
+    </div>
+    <div class="image-item">
+      <img src="image4.jpg" alt="图片4">
+    </div>
+    <div class="image-item">
+      <img src="image5.jpg" alt="图片5">
+    </div>
+    <div class="image-item">
+      <img src="image6.jpg" alt="图片6">
+    </div>
+  </div>
+</body>
+
+</html>
