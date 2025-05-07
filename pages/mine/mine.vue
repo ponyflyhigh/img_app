@@ -14,7 +14,7 @@
       
       <!-- 功能列表 -->
       <view class="function-list">
-        <navigator url="/pages/check/check" class="function-item">
+        <navigator url="/pages/mine/userInfo" class="function-item">
           <text>完善资料</text>
         </navigator>
         <navigator url="/pages/mine/charge" class="function-item">

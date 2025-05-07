@@ -1,5 +1,19 @@
 {
 	"pages": [
+		{
+			"path": "pages/login/register",
+			"style": {
+			  "navigationBarTitleText": "注册",
+			  "navigationBarBackgroundColor": "#A7C6B6"
+			}
+		  },
+		  {
+			"path": "pages/login/login",
+			"style": {
+			  "navigationBarTitleText": "登录",
+			  "navigationBarBackgroundColor": "#A7C6B6"
+			}
+		  },
 	  {
 		"path": "pages/index/index",
 		"style": {
@@ -11,6 +25,12 @@
 		"path": "pages/mine/mine",
 		"style": {
 		  "navigationBarTitleText": "我的"
+		}
+	  },
+	  {
+		"path": "pages/mine/userInfo",
+		"style": {
+		  "navigationBarTitleText": "用户信息"
 		}
 	  },
 	  {

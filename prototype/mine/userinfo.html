@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>个人信息</title>
+  <style>
+    /* 全局样式重置 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #333;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+   .container {
+      background-color: #222;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+    }
+
+   .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+   .title {
+      font-size: 24px;
+    }
+
+   .back-button {
+      background-color: green;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+   .tip {
+      color: red;
+      margin-bottom: 20px;
+    }
+
+   .form-item {
+      margin-bottom: 15px;
+    }
+
+   .form-label {
+      display: block;
+      margin-bottom: 5px;
+      color: #ccc;
+    }
+
+   .date-picker {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+   .date-type {
+      background-color: #555;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+   .date-value {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #555;
+      padding: 8px 15px;
+      border-radius: 5px;
+    }
+
+   .date-display {
+      flex: 1;
+    }
+
+   .delete-icon {
+      cursor: pointer;
+    }
+
+   .gender-picker {
+      display: flex;
+      justify-content: space-between;
+    }
+
+   .gender-type {
+      background-color: #555;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+   .location-picker {
+      background-color: #555;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      width: 100%;
+      text-align: left;
+    }
+
+   .form-actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+   .cancel-button {
+      background-color: #555;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+   .save-button {
+      background-color: #f0ad4e;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <span class="title">个人信息</span>
+      <button class="back-button">返回</button>
+    </div>
+    <div class="form-item">
+      <label class="form-label">出生日期 *</label>
+      <div class="date-picker">
+        <button class="date-type">阳历</button>
+        <button class="date-type">农历</button>
+      </div>
+      <div class="date-value">
+        <span class="date-display">2000年8月17日 03:06</span>
+        <span class="delete-icon">🗑️</span>
+      </div>
+    </div>
+    <div class="form-item">
+      <label class="form-label">性别 *</label>
+      <div class="gender-picker">
+        <button class="gender-type">男</button>
+        <button class="gender-type">女</button>
+      </div>
+    </div>
+    <div class="form-item">
+      <label class="form-label">出生地点 *</label>
+      <button class="location-picker">请选择出生地点</button>
+    </div>
+    <div class="form-actions">
+      <button class="cancel-button">取消</button>
+      <button class="save-button">保存</button>
+    </div>
+  </div>
+  <script>
+    // 这里可以添加一些简单的交互逻辑，比如按钮点击事件等
+    // 例如返回按钮点击事件
+    const backButton = document.querySelector('.back-button');
+    backButton.addEventListener('click', function () {
+      // 这里可以实现返回上一页的逻辑，比如跳转到指定页面
+      console.log('点击了返回按钮');
+    });
+
+    // 取消按钮点击事件
+    const cancelButton = document.querySelector('.cancel-button');
+    cancelButton.addEventListener('click', function () {
+      console.log('点击了取消按钮');
+    });
+
+    // 保存按钮点击事件
+    const saveButton = document.querySelector('.save-button');
+    saveButton.addEventListener('click', function () {
+      console.log('点击了保存按钮');
+    });
+  </script>
+</body>
+
+</html>
